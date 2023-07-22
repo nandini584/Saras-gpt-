@@ -8,7 +8,7 @@ import Dashboard from './Screens/Dashboard'
 import Quiz from './Screens/Quiz'
 import Settings from './Screens/Settings'
 import Congrats from './Screens/Congrats'
-import StackNavigator from '../StackNavigator'
+import StackNavigator from './StackNavigator'
 
 const Homename = "Home";
 const Dashboardname = "Dashboard";

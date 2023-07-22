@@ -2,7 +2,7 @@ import {View, StyleSheet, Pressable, FlatList, TouchableOpacity ,Text} from 'rea
 import {useState, useEffect} from 'react'
 import ProgressBar from 'react-native-progress/Bar';
 import { useNavigation } from "@react-navigation/native";
-import StackNavigator from '../../StackNavigator';
+import StackNavigator from '../StackNavigator';
 import Congrats from './Congrats';
 import questions from '../../data/questions';
 export default function Quiz() {
