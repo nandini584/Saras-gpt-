@@ -15,6 +15,8 @@ export default function Quiz() {
   // index of the question
   const [index, setIndex] = useState(0);
 
+  const [points, setPoints] = useState(0.0);
+
   // answer Status (true or false)
   const [answerStatus, setAnswerStatus] = useState(null);
 
@@ -28,6 +30,7 @@ export default function Quiz() {
     if (selectedAnswerIndex !== null) {
       if (currentQuestion && selectedAnswerIndex === currentQuestion.correctAnswerIndex) {
         setProgress((progress) => progress + 0.2);
+        setPoints((points) => points + 0.2);
         setAnswerStatus(true);
         setAnswers((prevAnswers) => [...prevAnswers, { question: index + 1, answer: true }]);
       } else {
@@ -113,6 +116,7 @@ setAnswerStatus(null)
       {index + 1 >= questions.length ? (
           <Pressable  onPress={() => 
             navigation.navigate("Congrats", {
+            points:points,
             answers: answers 
           })
            }
