@@ -1,7 +1,9 @@
 import {View, Text, StyleSheet,ScrollView, useState, FlatList} from 'react-native'
 import SearchBar from '../../Components/Searchbar'
 import Card from '../../Components/Card'
+import Streak from '../../Components/Streak'
 export default function Home({ navigation }){
+   
 //   const data = [
 //       "Newspaper",
 //       "Battles",
@@ -24,9 +26,9 @@ export default function Home({ navigation }){
 //        );
     
     return(
-        <View >
+        <View style={{backgroundColor:"#F6F9F8"}}>
             <View>
-                <Text>Streak(component)</Text>
+                <Streak/>
             </View>
             <View>
                 <SearchBar/>
@@ -37,21 +39,21 @@ export default function Home({ navigation }){
              keyExtractor={(item, index) => index.toString()}
                 />  */}
             </View>
-            <View>
-                <Text>Switch tab(component)</Text>
+            <View style={{display:"flex", flexDirection:"row", paddingVertical:7, backgroundColor:"white", marginHorizontal:32, borderRadius:8, marginBottom:20, justifyContent:"space-around", fontWeight:"bold" }}>
+              <Text>Choose a Topic</Text>
+              <Text>UPSC Trivia</Text>
             </View>
             <ScrollView>
             <View style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"center"}}>
-                
-
-               <Card/>
-               <Card/>
-               <Card/>
-                <Card/>
-               <Card/>
-               <Card/>
-               <Card/>
-               <Card/>
+               <Card url={require("../../assets/newspaper.png")} domain="Current Affairs" count={34} acuracy={0.43}/>
+               <Card url={require("../../assets/newspaper.png")} domain="Newspaper" count={34} acuracy={0.45}/>
+               <Card url={require("../../assets/Amendments.png")} domain="Amendments" count={34} acuracy={0.54}/>
+               <Card url={require("../../assets/Constitution.png")} domain="Constitution" count={34} acuracy={0.87}/>
+               <Card url={require("../../assets/newspaper.png")} domain="History" count={34} acuracy={0.98}/>
+               <Card url={require("../../assets/newspaper.png")} domain="Battles" count={34} acuracy={0.03}/>
+               <Card url={require("../../assets/Amendments.png")} domain="Radiology" count={34} acuracy={0.32}/>
+               <Card url={require("../../assets/Constitution.png")} domain="Current Affairs" count={34} acuracy={0.74}/>
+               
             </View>
                 </ScrollView>
         </View>

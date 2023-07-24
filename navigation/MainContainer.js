@@ -45,7 +45,7 @@ return(
             },
             null
           ],
-        tabBarIcon: ({focused, color, size})=>{
+        tabBarIcon: ({focused, color, size, style })=>{            
             let iconName;
             let rn=route.name;
             if(rn === Homename){
