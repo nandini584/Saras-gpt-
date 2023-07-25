@@ -19,11 +19,15 @@
     "react-native": "0.71.8",
     "react-native-calendar-strip": "^2.2.6",
     "react-native-calendars": "^1.1300.0",
+    "react-native-element-dropdown": "^2.9.0",
     "react-native-gesture-handler": "~2.9.0",
     "react-native-ico-material-design": "^3.3.1",
     "react-native-paper": "^5.9.1",
     "react-native-progress": "^5.0.0",
-    "react-native-svg": "13.4.0"
+    "react-native-radio-buttons-group": "^3.0.2",
+    "react-native-select-dropdown": "^3.3.4",
+    "react-native-svg": "13.4.0",
+    "toggle-switch-react-native": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
