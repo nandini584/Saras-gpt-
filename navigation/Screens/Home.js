@@ -44,7 +44,7 @@ export default function Home({ navigation }){
               <Text>UPSC Trivia</Text>
             </View>
             <ScrollView>
-            <View style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"center"}}>
+            <View style={{display:"flex", flexDirection:"row", flexWrap:"wrap", justifyContent:"center", marginBottom:300}}>
                <Card url={require("../../assets/newspaper.png")} domain="Current Affairs" count={34} acuracy={0.43}/>
                <Card url={require("../../assets/newspaper.png")} domain="Newspaper" count={34} acuracy={0.45}/>
                <Card url={require("../../assets/Amendments.png")} domain="Amendments" count={34} acuracy={0.54}/>
