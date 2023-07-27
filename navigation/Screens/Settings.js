@@ -1,10 +1,11 @@
-import {View, Text, ScrollView, Image} from 'react-native'
+import {View, Text, ScrollView, Image, StyleSheet, Pressable} from 'react-native'
 import DropdownComp from "../../Components/DropdownComp";
 import RadioGroup from 'react-native-radio-buttons-group';
 import Toggle from '../../Components/Toggle'
 import Streak from '../../Components/Streak'
 import Field from '../../Components/Field'
 import {useMemo, useState} from 'react'
+import UploadImage from '../../Components/Uploadprofile';
 export default function Settings({navigation}){
     const number = [5,6,7,8,9,10];
     
@@ -33,9 +34,16 @@ export default function Settings({navigation}){
            </View>
           
            <View style={{backgroundColor:"white", margin:24, borderRadius:20, paddingBottom:32}}>
-            <View style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between", paddingTop:16 }}>
+            {/* <View style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between", paddingTop:16 }}>
            <Image source={require('../../assets/dummyprofile.png')} style={{marginLeft:32, marginVertical:16, }}/>
            <Text style={{padding:36, marginRight:32,borderWidth:2, borderColor:"#E3E3E3", borderRadius: 12, borderStyle:"dashed", color:"#06C295", fontWeight:"bold"}}>Click to Upload</Text>
+            </View> */}
+            <View style={{ display:"flex", 
+        alignItems:"center", 
+        justifyContent:"center", 
+    }}>
+
+            <UploadImage />
             </View>
             <Field name="Name" entry="Nandini Arora" />
             <Field name="Email" entry="xyz@gmail.com" />
@@ -59,10 +67,25 @@ export default function Settings({navigation}){
             <Toggle name="System Sound" state={true} />
            <Toggle name="Notifications" state={false} />
            <Toggle name="Darkmode" state={true} /> 
-           
-
+           <View style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginTop:12, marginRight:32}}>
+           <View style={styles.button}>
+        <Pressable onPress={()=>navigation.navigate('Quiz')}>
+        <Text style={{color:"white", fontWeight:"bold", fontSize:14}} >Log out</Text>
+        </Pressable>
+        </View>
+            </View>
            </View>
+           
            </ScrollView>
         </View>
     )
-}
+}const styles=StyleSheet.create({
+    button:{
+    display:"flex",
+    paddingVertical:10,
+    paddingHorizontal:32,
+   
+    alignItems:"flex-end", 
+    backgroundColor:"#06C295", 
+    borderRadius:40, 
+ }})

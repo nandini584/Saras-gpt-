@@ -1,7 +1,8 @@
-import {View, Text, StyleSheet, ScrollView, Image} from 'react-native'
-import CircularProgress from 'react-native-circular-progress-indicator';
+import {View, Text, StyleSheet, ScrollView, Image, SafeAreaView, useState} from 'react-native'
 import Streak from "../../Components/Streak"
+// import CircularProgress from 'react-native-circular-progress-indicator';
 import {BarChart} from "react-native-chart-kit";
+import { Calendar } from 'react-native-calendars';
 export default function Dashboard({navigation}){
     const data = {
         labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -11,7 +12,7 @@ export default function Dashboard({navigation}){
           }
         ]
       };
-      
+      // const [circularProgressValue, setCircularProgressValue] = useState(0);
       const chartConfig = {
        backgroundColor:"white",
        boderRadius:20,
@@ -52,30 +53,47 @@ export default function Dashboard({navigation}){
   verticalLabelRotation={30}
 />
                 </View>
-                <View style={{dispaly:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
+              <View style={{dispaly:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center"}}>
                 <View style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"white", width: 160, height: 160, borderRadius: 20, marginTop:30, marginRight:24}}>
                     <Text style={{color:"white", fontSize:16, fontWeight:700,color: "#373737", textAlign: "center"}}>Daily Acuracy</Text>
-                    <CircularProgress
-  value={60}
-  radius={44}
-  progressValueColor={'#06C295'}
-  activeStrokeColor={'#06C295'}
-  inActiveStrokeColor={'#06C295'}
-  inActiveStrokeOpacity={0.5}
-  inActiveStrokeWidth={30}
-  activeStrokeWidth={15}
-/>
+                    {/* <CircularProgress
+                        radius={44}
+                        value={circularProgressValue}
+                        textColor="#222"
+                        fontSize={22}
+                        valueSuffix={'%'}
+                        inActiveStrokeColor='#83EFD5'
+                        inActiveStrokeOpacity={0.2}
+                        activeStrokeWidth={12}
+                        progressValueColor={'#06C295'}/> */}
                 </View>
                 <View style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"white", width: 160, height: 160, borderRadius: 20, marginTop:30}}>
                     <Text style={{color:"white", fontSize:16, fontWeight:700,color: "#373737", textAlign: "center"}}>Quiz Attempted</Text>
                     <Text style={{color:"white", fontSize:42, fontWeight:800,color: "#06C295", textAlign: "center", marginTop:32}}>45</Text>
                 </View>
                 </View>
+            <SafeAreaView style={styles.container}>
+            <Calendar  style={{
+    borderRadius: 20,
+    marginHorizontal: 32,
+    marginVertical: 16,
+  }}
+  theme={{
+    calendarBackground: 'white',
+    
+    monthTextColor: '#888'
+  }}/>
+
+            </SafeAreaView>
+                
                 </View>
             </ScrollView>
         </View>
     )
 }
 const styles=StyleSheet.create({
-
+  container: {
+    flex: 1,
+    justifyContent: 'center'
+  },
 })

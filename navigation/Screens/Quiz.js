@@ -125,12 +125,20 @@ setAnswerStatus(null)
             <Text style={styles.next}>Done</Text>
           </Pressable>
         ) : answerStatus === null ? null : (
+          <View style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"space-between", marginHorizontal:20}}>
+          <Pressable
+            onPress={() => setIndex(index - 1)}
+            
+          >
+            <Text style={styles.next}>Previous</Text>
+          </Pressable>
           <Pressable
             onPress={() => setIndex(index + 1)}
-            style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginRight:20}}
+            
           >
-            <Text style={styles.next}>Next Question</Text>
+            <Text style={styles.next}>Next</Text>
           </Pressable>
+          </View>
         )}
      
     </View>
