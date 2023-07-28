@@ -1,5 +1,6 @@
-import {View, Text, StyleSheet, ScrollView, Image, SafeAreaView, useState} from 'react-native'
+import {View, Text, StyleSheet, ScrollView, Image, SafeAreaView} from 'react-native'
 import Streak from "../../Components/Streak"
+import {useState} from 'react'
 // import CircularProgress from 'react-native-circular-progress-indicator';
 import {BarChart} from "react-native-chart-kit";
 import { Calendar } from 'react-native-calendars';
@@ -68,8 +69,8 @@ export default function Dashboard({navigation}){
                         progressValueColor={'#06C295'}/> */}
                 </View>
                 <View style={{display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:"white", width: 160, height: 160, borderRadius: 20, marginTop:30}}>
-                    <Text style={{color:"white", fontSize:16, fontWeight:700,color: "#373737", textAlign: "center"}}>Quiz Attempted</Text>
-                    <Text style={{color:"white", fontSize:42, fontWeight:800,color: "#06C295", textAlign: "center", marginTop:32}}>45</Text>
+                    <Text style={{color:"white", fontSize:16, fontWeight:700, color: "#373737", textAlign: "center"}}>Quiz Attempted</Text>
+                    <Text style={{color:"white", fontSize:42, fontWeight:800, color: "#06C295", textAlign: "center", marginTop:32}}>45</Text>
                 </View>
                 </View>
             <SafeAreaView style={styles.container}>

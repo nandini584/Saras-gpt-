@@ -12,7 +12,7 @@ const Card = (props) => {
   return (
     <Pressable onPress={()=>navigation.navigate('Quiz')}>
    <View>
-    <Image source = {props.url} style={{ width: 180, height: 180,}}/>
+    <Image source = {props.url} style={{ width: 180, height: 180, }}/>
     <Text style={{color:"white", fontWeight:"bold", fontSize:12, position:"absolute", top: 108, left: 26}}>{props.domain}</Text>
     <Text style={{color:"white", fontWeight:"bold", fontSize:12, position:"absolute", top: 108, left: 140}}>{Math.floor(progress*100)}%</Text>
     <ProgressBar progress={progress} width={130} height={5} color="white" opacity={0.8} borderRadius={20} position="absolute" top={132} left={26} borderWidth={0.8} />
