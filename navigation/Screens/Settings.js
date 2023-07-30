@@ -62,9 +62,9 @@ export default function Settings({navigation}){
             radioButtons={radioButtons} 
             onPress={setSelectedId}
             selectedId={selectedId}
-            color="#06C295"
+            
         />
-            <Toggle name="System Sound" state={true} />
+           <Toggle name="System Sound" state={true} />
            <Toggle name="Notifications" state={false} />
            <Toggle name="Darkmode" state={true} /> 
            <View style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginTop:12, marginRight:32}}>
